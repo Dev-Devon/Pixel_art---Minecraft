@@ -82,6 +82,8 @@ python image.py
 
 ## 📥 Installation
 
+###I have put a also a exe of tool, You can get it in release.
+
 ### 1. Install Python
 Download from [python.org](https://python.org) (version 3.10 or newer)
 
