@@ -1,0 +1,61 @@
+name: Build PixelArtBuilder
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - run: pyinstaller --onefile --windowed --name PixelArtBuilder --icon favicon.ico --add-data "blocks.csv;." image.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-build
+          path: dist/
+
+  build-mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - run: pyinstaller --windowed --name PixelArtBuilder --icon favicon.icns --add-data "blocks.csv:." image.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mac-build
+          path: dist/
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - run: pyinstaller --onedir --name PixelArtBuilder --add-data "blocks.csv:." image.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-build
+          path: dist/
