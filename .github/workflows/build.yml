@@ -1,4 +1,4 @@
-name: Build PixelArtBuilder
+name: Build PixelArtBuilder_v1.0
 
 on:
   push:
