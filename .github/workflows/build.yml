@@ -15,9 +15,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - run: pip install -r requirements.txt
+      - run: pip install --upgrade pip
+      - run: pip install pyinstaller pillow pyautogui pyperclip
 
-      - run: pyinstaller --onefile --windowed --name PixelArtBuilder --icon favicon.ico --add-data "blocks.csv;." image.py
+      - run: pyinstaller --clean --onefile --windowed --name PixelArtBuilder --icon favicon.ico --add-data "blocks.csv;." image.py
 
       - uses: actions/upload-artifact@v4
         with:
@@ -33,9 +34,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - run: pip install -r requirements.txt
+      - run: pip install --upgrade pip
+      - run: pip install pyinstaller pillow pyautogui pyperclip
 
-      - run: pyinstaller --windowed --name PixelArtBuilder --icon favicon.icns --add-data "blocks.csv:." image.py
+      - run: pyinstaller --clean --windowed --name PixelArtBuilder --add-data "blocks.csv:." image.py
 
       - uses: actions/upload-artifact@v4
         with:
@@ -51,9 +53,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - run: pip install -r requirements.txt
+      - run: pip install --upgrade pip
+      - run: pip install pyinstaller pillow pyautogui pyperclip
 
-      - run: pyinstaller --onedir --name PixelArtBuilder --add-data "blocks.csv:." image.py
+      - run: pyinstaller --clean --onedir --name PixelArtBuilder --add-data "blocks.csv:." image.py
 
       - uses: actions/upload-artifact@v4
         with:
