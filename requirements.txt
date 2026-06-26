@@ -1,0 +1,7 @@
+PIL
+PIL.image
+tk
+pillow
+pyautogui
+pyperclip
+pyinstaller
