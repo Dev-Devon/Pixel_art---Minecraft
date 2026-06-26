@@ -2,7 +2,8 @@
 
 > **Turn any image into a Minecraft pixel art wall in seconds!**  
 > Just upload an image, click a button, and watch it build instantly.
-
+---
+<img width="698" height="763" alt="Capture" src="https://github.com/user-attachments/assets/9656fa80-fe93-44b2-b429-401a0dfac79a" />
 ---
 
 ## 📖 Table of Contents
@@ -140,6 +141,8 @@ Click **"Start Building"** → Select **"Generate Datapack"**
 
 > 📁 **Path:** `.minecraft/saves/YourWorld/datapacks/`
 
+---
+<img width="1135" height="767" alt="Capture1" src="https://github.com/user-attachments/assets/32d74c13-2b27-4484-b1b6-93f21c67b0b5" />
 ---
 
 ## 🎮 In-Game Instructions
