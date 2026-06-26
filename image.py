@@ -663,7 +663,7 @@ class MinecraftPixelArtApp:
         datapack_name = result["name"]
         datapack_path = f"{folder}/{datapack_name}"
         
-        os.makedirs(f"{datapack_path}/data/{datapack_name}/functions", exist_ok=True)
+        os.makedirs(f"{datapack_path}/data/{datapack_name}/function", exist_ok=True)
         
         # Create pack.mcmeta
         pack_mcmeta = {
@@ -698,7 +698,7 @@ class MinecraftPixelArtApp:
             batch_files = files[start_idx:end_idx]
             
             batch_name = f'batch_{batch_num}'
-            batch_path = f"{datapack_path}/data/{datapack_name}/functions/{batch_name}.mcfunction"
+            batch_path = f"{datapack_path}/data/{datapack_name}/function/{batch_name}.mcfunction"
             
             with open(batch_path, 'w') as f:
                 f.write(f"# Batch {batch_num}\n")
@@ -709,12 +709,12 @@ class MinecraftPixelArtApp:
         
         # Create individual function files
         for file_info in files:
-            file_path = f"{datapack_path}/data/{datapack_name}/functions/{file_info['name']}.mcfunction"
+            file_path = f"{datapack_path}/data/{datapack_name}/function/{file_info['name']}.mcfunction"
             with open(file_path, 'w') as f:
                 f.write("\n".join(file_info['commands']))
         
         # Create main function
-        main_path = f"{datapack_path}/data/{datapack_name}/functions/build.mcfunction"
+        main_path = f"{datapack_path}/data/{datapack_name}/function/build.mcfunction"
         with open(main_path, 'w') as f:
             f.write(f"function {datapack_name}:batch_0\n")
         
